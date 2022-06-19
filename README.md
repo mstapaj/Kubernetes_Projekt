@@ -1,6 +1,6 @@
 ## Kubernetes Project
 
-The application allows you to create, edit and delete notes that are stored in a MongoDB database. In addition, it is possible to create, edit, delete one quick note that is stored in the Redis database. The project has two namespaces development and production, which run independently of each other.
+The application allows you to create, edit and delete notes that are stored in a MongoDB database. In addition, it is possible to create, edit, delete one quick note that is stored in the Redis database. The project has two namespaces development and production, which run independently of each other. The project was made for a Cloud Technologies course at the University of Gdańsk.
 
 ## Project Status
 
