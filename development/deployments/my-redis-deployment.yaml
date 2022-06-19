@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-redis-deployment
+  namespace: development
+  labels:
+    run: my-redis-deployment
+spec:
+  template:
+    metadata:
+      name: my-redis-deployment
+      labels:
+        run: my-redis-deployment
+    spec:
+      containers:
+        - name: my-redis-deployment
+          image: redis:latest
+          args: [ "--appendonly", "yes", "--save", "900", "1", "--save", "30", "2", ]
+          volumeMounts:
+            - mountPath: /data
+              name: redisvolume
+          ports:
+            - containerPort: 6379
+      volumes:
+        - name: redisvolume
+          persistentVolumeClaim:
+            claimName: my-redis-pvc
+  replicas: 1
+  selector:
+    matchLabels:
+      run: my-redis-deployment

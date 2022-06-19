@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: pv-mongodb-dev
+    namespace: development
+    labels:
+        type: local
+spec:
+    storageClassName: manual
+    capacity:
+        storage: 50Mi
+    accessModes:
+        - ReadWriteOnce
+    hostPath:
+        #    Path dla linux - nie działa
+        path: "/mnt/data/development/mongodb"
+        #    Path dla Windows - działa
+        # path: "/run/desktop/mnt/host/d/Szkoła/Rok 2 semestr 2/Technologie chmurowe/Technologie_chmurowe/Projekt/development/data/mongodb"
+    claimRef:
+        name: my-mongodb-pvc
+        namespace: development

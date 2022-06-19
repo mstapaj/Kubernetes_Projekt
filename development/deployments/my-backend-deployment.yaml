@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-backend-deployment
+    namespace: development
+    labels:
+        app: myapp
+        type: backend
+spec:
+    selector:
+        matchLabels:
+            app: myapp
+            type: backend
+    replicas: 2
+    template:
+        metadata:
+            name: my-backend-pod
+            labels:
+                app: myapp
+                type: backend
+        spec:
+            containers:
+                - name: my-backend-container
+                  image: mtx22/backend-project:dev-1.0
+                  env:
+                      - name: MONGO_HOST
+                        valueFrom:
+                            configMapKeyRef:
+                                name: my-mongodb-configmap
+                                key: MONGO_HOST
+                      - name: MONGO_PORT
+                        valueFrom:
+                            configMapKeyRef:
+                                name: my-mongodb-configmap
+                                key: MONGO_PORT
+                      - name: MONGO_DATABASE
+                        valueFrom:
+                            configMapKeyRef:
+                                name: my-mongodb-configmap
+                                key: MONGO_DATABASE
+                      - name: REDIS_HOST
+                        valueFrom:
+                            configMapKeyRef:
+                                name: my-redis-configmap
+                                key: REDIS_HOST
+                      - name: REDIS_PORT
+                        valueFrom:
+                            configMapKeyRef:
+                                name: my-redis-configmap
+                                key: REDIS_PORT

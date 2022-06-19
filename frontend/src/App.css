@@ -1,0 +1,262 @@
+* {
+  font-family: 'Raleway',sans-serif;
+}
+
+html .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #6f94ff;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html .header div {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+html .App {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 280px 1fr;
+      grid-template-columns: 280px 1fr;
+}
+
+html .App .quick {
+  padding: 10px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  border-right: 1px solid lightgray;
+  width: 280px;
+}
+
+html .App .quick h3 {
+  text-align: center;
+  margin: 10px 0 5px 0;
+  text-shadow: #c5c5c5 2px 2px 2px;
+}
+
+html .App .quick .quickNote {
+  background-color: white;
+  padding: 4px;
+  border-radius: 4px;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  max-height: 600px;
+  margin-bottom: 4px;
+}
+
+html .App .noteform {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html .App .note {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 0;
+  margin-left: 15px;
+}
+
+html .App .note h3 {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+  margin: 5px;
+  text-shadow: #c5c5c5 2px 2px 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html .App .note .notes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+html .App .note .notes div {
+  border-radius: 4px;
+  margin: 10px;
+  background-color: #fff7d1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html .App .note .notes div h4 {
+  background-color: #fff2ab;
+  margin: 0;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  max-width: 220px;
+  word-wrap: break-word;
+}
+
+html .App .note .notes div .content {
+  margin: 5px;
+  word-wrap: break-word;
+  max-width: 200px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+html .App .note .notes div .buttons {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+html .App .note form {
+  background-color: #fff7d1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 400px;
+  border-radius: 4px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+html .App .note form p {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  margin: 0 10px;
+}
+
+html .App .note form div {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html .App .note form div input {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #fff2ab;
+  border: none;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+html .App .note form div textarea {
+  padding: 5px;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  background-color: #fff7d1;
+  border: none;
+  max-width: 390px;
+}
+
+html .App .note form button {
+  margin: 8px;
+}
+
+.fl {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+}
+
+button {
+  margin: 5px;
+  padding: 6px;
+  background-color: white;
+  color: #6f94ff;
+  border: 2px solid #6f94ff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #6f94ff;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.buttondel {
+  color: #6f94ff;
+  border: 2px solid #6f94ff;
+}
+
+.buttondel:hover {
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 2px solid crimson;
+}
+
+textarea {
+  background-color: white;
+  border: 2px solid #9f9f9f;
+  border-radius: 4px;
+  height: 200px;
+  max-width: 270px;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.buttons textarea {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+/*# sourceMappingURL=App.css.map */

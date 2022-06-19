@@ -1,0 +1,11 @@
+# Database files
+/development/data/mongodb/*
+/development/data/redis/*
+/production/data/mongodb/*
+/production/data/redis/*
+
+# Idea folder
+.idea
+
+# VSCode folder
+.vscode

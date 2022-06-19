@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: my-mongodb-deployment
+  namespace: development
+  labels:
+    run: my-mongodb-deployment
+
+spec:
+  template:
+    metadata:
+      name: my-mongodb-deployment
+      labels:
+        run: my-mongodb-deployment
+
+    spec:
+      containers:
+        - name: my-mongodb-deployment
+          image: mongo
+          args: [ "--dbpath","/data/db" ]
+          volumeMounts:
+            - name: mongodbvolume
+              mountPath: /data/db
+          ports:
+            - containerPort: 27017
+      volumes:
+        - name: mongodbvolume
+          persistentVolumeClaim:
+            claimName: my-mongodb-pvc
+  replicas: 1
+  selector:
+    matchLabels:
+      run: my-mongodb-deployment

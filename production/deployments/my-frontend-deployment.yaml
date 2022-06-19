@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-frontend-deployment
+    namespace: production
+    labels:
+        app: myapp
+        type: frontend
+spec:
+    selector:
+        matchLabels:
+            app: myapp
+            type: frontend
+    replicas: 2
+    template:
+        metadata:
+            name: my-frontend-pod
+            labels:
+                app: myapp
+                type: frontend
+        spec:
+            containers:
+                - name: my-frontend-container
+                  image: mtx22/frontend-project:dev-2.0
+                  ports:
+                      - containerPort: 80

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+    name: my-frontend-service
+    namespace: production
+spec:
+    type: ClusterIP
+    ports:
+        - port: 80
+          targetPort: 80
+          protocol: TCP
+    selector:
+        app: myapp
+        type: frontend
